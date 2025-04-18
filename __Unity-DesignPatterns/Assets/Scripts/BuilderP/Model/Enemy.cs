@@ -1,14 +1,30 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace BuilderP.Model
 {
     public class Enemy : MonoBehaviour
     {
-        [SerializeField] private float _moveSpeed = 3.0f;
-        [SerializeField] private float _chaseRange = 5.0f;
+        [SerializeField] private float moveSpeed = 3.0f;
+        [SerializeField] private float chaseRange = 5.0f;
 
-        [SerializeField] private Transform _Player;
+        private Transform _player;
+
+        private void Awake()
+        {
+            Init();
+        }
+
+        private void Init()
+        {
+            InitComponents();
+        }
+
+        private void InitComponents()
+        {
+            _player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
 
         private void Update()
         {
@@ -17,12 +33,12 @@ namespace BuilderP.Model
 
         private void ChasePlayer()
         {
-            float distance = Vector3.Distance(_Player.position, transform.position);
+            float distance = Vector3.Distance(_player.position, transform.position);
             
-            if (distance < _chaseRange)
+            if (distance < chaseRange)
             {
-                Vector2 direction = (_Player.position - transform.position).normalized;
-                transform.position += (Vector3) direction * (_moveSpeed * Time.deltaTime);
+                Vector2 direction = (_player.position - transform.position).normalized;
+                transform.position += (Vector3) direction * (moveSpeed * Time.deltaTime);
             }
         }
     }
