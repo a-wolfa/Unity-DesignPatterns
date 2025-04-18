@@ -1,8 +1,7 @@
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace FactoryP
+namespace _FactoryP
 {
     public class EnemyFactoryController : MonoBehaviour
     {

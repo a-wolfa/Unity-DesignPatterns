@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 1174603515}
   - component: {fileID: 1174603516}
   m_Layer: 0
-  m_Name: Enemy Factory Controller
+  m_Name: Enemy Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -354,10 +354,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1174603514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b3377cab4b919f4c909bae60db04112, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e318c10eb0ceb40bae52d580807790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 2138894033}
+  parent: {fileID: 1199635075}
+  delay: 4
 --- !u!1 &1199635074
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,11 +390,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2138894033 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4075296410484034061, guid: 5120039a67edf1141b1d9e49ab40590a, type: 3}
-  m_PrefabInstance: {fileID: 667918627}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

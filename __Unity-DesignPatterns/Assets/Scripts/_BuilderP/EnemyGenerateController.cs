@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using BuilderP.Builder;
+using _BuilderP.Builder;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace BuilderP.Controller
+namespace _BuilderP.Controller
 {
     public class EnemyGenerateController : MonoBehaviour
     {
@@ -16,16 +14,15 @@ namespace BuilderP.Controller
             Generate();
             InvokeRepeating(nameof(Generate), delay, 10);
         }
-
-        // ReSharper disable Unity.PerformanceAnalysis
+        
         private void Generate()
         {
             var x = Random.Range(-8.0f, 8.0f);
             var y = Random.Range(-4.0f, 4.0f);
 
             new EnemyBuilder()
-                .SetName("Starex")
                 .SetPosition(new Vector2(x, y))
+                .SetName()
                 .SetParent(parent)
                 .Build();
         }

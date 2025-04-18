@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Enemy
+namespace Behaviours
 {
     public class Enemy : MonoBehaviour
     {

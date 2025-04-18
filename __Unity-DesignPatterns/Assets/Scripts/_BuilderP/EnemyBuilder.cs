@@ -1,20 +1,21 @@
+using Behaviours;
 using UnityEngine;
 
-namespace BuilderP.Builder
+namespace _BuilderP.Builder
 {
     public class EnemyBuilder
     {
-        private readonly Enemy.Enemy _enemy;
+        private readonly Enemy _enemy;
 
         public EnemyBuilder()
         {
-            var enemyPrefab = Resources.Load<Enemy.Enemy>("Enemy");
+            var enemyPrefab = Resources.Load<Enemy>("Enemy");
             _enemy = Object.Instantiate(enemyPrefab);
         }
 
-        public EnemyBuilder SetName(string objectName)
+        public EnemyBuilder SetName(string objectName = "Starex")
         {
-            _enemy.transform.name = objectName;
+            _enemy.name = "Starex";
             return this;
         }
 
@@ -30,7 +31,7 @@ namespace BuilderP.Builder
             return this;
         }
 
-        public Enemy.Enemy Build()
+        public Enemy Build()
         {
             return _enemy;
         }
