@@ -1,8 +1,6 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace BuilderP.Model
+namespace Enemy
 {
     public class Enemy : MonoBehaviour
     {

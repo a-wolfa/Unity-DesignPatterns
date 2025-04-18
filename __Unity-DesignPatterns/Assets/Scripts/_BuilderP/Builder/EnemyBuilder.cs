@@ -1,15 +1,14 @@
 using UnityEngine;
-using BuilderP.Model;
 
 namespace BuilderP.Builder
 {
     public class EnemyBuilder
     {
-        private readonly Enemy _enemy;
+        private readonly Enemy.Enemy _enemy;
 
         public EnemyBuilder()
         {
-            var enemyPrefab = Resources.Load<Enemy>("Enemy");
+            var enemyPrefab = Resources.Load<Enemy.Enemy>("Enemy");
             _enemy = Object.Instantiate(enemyPrefab);
         }
 
@@ -31,7 +30,7 @@ namespace BuilderP.Builder
             return this;
         }
 
-        public Enemy Build()
+        public Enemy.Enemy Build()
         {
             return _enemy;
         }
