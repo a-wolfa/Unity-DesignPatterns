@@ -2,15 +2,20 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Visitor.Abstractions;
+using Visitor.Interactable;
 using Visitor.Interactable.Abstractions;
 
 namespace Visitor.Interactor
 {
     public class PlayerInteractor : MonoBehaviour
     {
-        public Button doorButton;
-        public Button chestButton;
+        [SerializeField] private Button doorButton;
+        [SerializeField] private Button chestButton;
+        
         private IVisitor _interactionVisitor;
+        
+        private IInteractable _doorInteractable;
+        private IInteractable _chestInteractable;
 
         private void Awake()
         {
@@ -20,12 +25,19 @@ namespace Visitor.Interactor
         private void Init()
         {
             InitCommands();
+            InitComponents();
+        }
+        
+        private void InitComponents()
+        {
+            _doorInteractable = FindFirstObjectByType<Door>();
+            _chestInteractable = FindFirstObjectByType<TreasureChest>();
         }
 
         private void InitCommands()
         {
-            doorButton.onClick.AddListener(() => ButtonAction(doorButton.GetComponent<IInteractable>()));
-            chestButton.onClick.AddListener(() => ButtonAction(chestButton.GetComponent<IInteractable>()));
+            doorButton.onClick.AddListener(() => Interact(_doorInteractable));
+            chestButton.onClick.AddListener(() => Interact(_chestInteractable));
         }
 
         private void Start()
@@ -33,7 +45,7 @@ namespace Visitor.Interactor
             _interactionVisitor = new PlayerInteractionVisitor();
         }
 
-        private void ButtonAction(IInteractable interactable)
+        private void Interact(IInteractable interactable)
         {
             if (interactable != null)
             {
