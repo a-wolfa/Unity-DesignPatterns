@@ -1,4 +1,3 @@
-using System;
 using MVP.Model;
 using MVP.View;
 using UnityEngine;
