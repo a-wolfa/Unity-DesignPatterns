@@ -666,7 +666,8 @@ PlayerSettings:
   webGLWebAssemblyBigInt: 0
   webGLCloseOnQuit: 0
   webWasm2023: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Standalone: UPM_PACKAGE_VALIDATOR_CHECK_IS_COMPLETE
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

@@ -1,18 +1,21 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+namespace Builder.Manager
 {
-    private void Start()
+    public class GameManager : MonoBehaviour
     {
-        CharacterBuilder builder = new CharacterBuilder();
+        private void Start()
+        {
+            CharacterBuilder builder = new CharacterBuilder();
 
-        Character warrior = builder
-            .SetName("Warrior")
-            .SetHealth(100)
-            .SetArmor("Plate Armor")
-            .SetWeapon("Sword")
-            .Build();
+            Character warrior = builder
+                .SetName("Warrior")
+                .SetHealth(100)
+                .SetArmor("Plate Armor")
+                .SetWeapon("Sword")
+                .Build();
 
-        warrior.PrintInfo();
+            warrior.PrintInfo();
+        }
     }
 }
