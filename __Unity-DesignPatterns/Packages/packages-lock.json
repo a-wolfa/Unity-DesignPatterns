@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.rmc.rmc-mini-mvcs": {
+      "version": "file:F:/Game Projects/Game/rmc-mini-mvcs",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.2d.animation": {
       "version": "10.1.4",
       "depth": 1,
@@ -143,7 +149,7 @@
       }
     },
     "com.unity.ide.rider": {
-      "version": "3.0.35",
+      "version": "3.0.36",
       "depth": 0,
       "source": "registry",
       "dependencies": {
